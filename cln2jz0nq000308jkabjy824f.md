@@ -106,11 +106,43 @@ uri 从固定地址改成 lb:xxxx
 
 灰度发布，比如上线新接口，先给新接口分配 20% 的流量，老接口 80%，再慢慢调整比重。[文档](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#the-weight-route-predicate-factory)
 
+```xml
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: weight_high
+        uri: https://weighthigh.org
+        predicates:
+        - Weight=group1, 8
+      - id: weight_low
+        uri: https://weightlow.org
+        predicates:
+        - Weight=group1, 2
+```
+
+这里的 `Weight=group1` 意识是把这两个断言设置成一组
+
 ### **流量染色**
 
 给请求（流量）添加一些标识，一般是设置请求头中，添加新的请求头。这样就可以区分是不是经过了网关，没有经过网关的就不会有对应的请求头，可以防止直接请求后端接口
 
 [文档](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#cors-configuration) [全局染色](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#default-filters)
+
+```xml
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: after_route
+          # path 的内容会拼到这个的后面进行请求
+          uri: http://localhost:8123
+          predicates:
+            - Path=/api/**
+          # 流量染色
+          filters:
+            - AddRequestHeader=yupi, handsome
+```
 
 ### **统一接口保护**
 
