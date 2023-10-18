@@ -1,8 +1,8 @@
 ---
-title: "设计模式 ①"
+title: "设计模式 一"
 datePublished: Tue Oct 17 2023 13:29:27 GMT+0000 (Coordinated Universal Time)
 cuid: clnud2b1z000c09jt96fq3q89
-slug: 6k66k6h5qih5bypiokroa
+slug: 6k66k6h5qih5bypios4ga
 cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/hGV2TfOh0ns/upload/c6c9eca1ac4e2d3d9b024a2a729703a3.png
 tags: design-patterns
 
