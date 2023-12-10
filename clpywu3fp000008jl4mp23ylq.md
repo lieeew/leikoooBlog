@@ -80,8 +80,7 @@ Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
 
 Java 中的异常处理是确保报错的稳定性、可靠性
 
-1. 需要打印异常，比如可以使用 SL4J 框架
-    
+0、需要打印异常，比如可以使用 SL4J 框架
 
 ```bash
 try {
@@ -91,8 +90,7 @@ try {
 }
 ```
 
-1. 需要捕获特定的异常信息，而不是直接使用 `Exception`
-    
+1、需要捕获特定的异常信息，而不是直接使用 `Exception`
 
 ```bash
 try {
@@ -101,11 +99,10 @@ try {
     // Handle IOException
 } catch (SQLException e) {
     // Handle SQLException
-} 
+}
 ```
 
-1. **提前**抛出对应的异常
-    
+**2、提前**抛出对应的异常
 
 ```bash
 if (input == null) {
@@ -113,8 +110,7 @@ if (input == null) {
 }
 ```
 
-1. 不要只是 catch 住异常，而什么都不干
-    
+3、不要只是 catch 住异常，而什么都不干
 
 ```bash
 try {
@@ -125,8 +121,7 @@ try {
 }
 ```
 
-1. 可以在异常出现的地方，有其他的处理方式
-    
+4、可以在异常出现的地方，有其他的处理方式
 
 ```bash
 try {
@@ -137,8 +132,7 @@ try {
 }
 ```
 
-1. `finally` 需要关闭，不管是否会发生异常
-    
+5、`finally` 需要关闭，不管是否会发生异常
 
 ```bash
 BufferedReader br = null;
@@ -158,8 +152,7 @@ try {
 }
 ```
 
-1. 需要捕获 stream 流里面的异常
-    
+6、需要捕获 stream 流里面的异常
 
 ```bash
 List<String> filenames = Arrays.asList("file1.txt", "file2.txt");
@@ -174,8 +167,7 @@ filenames.stream()
     .forEach(System.out::println);
 ```
 
-1. 使用 assert 检测参数是符合要求，不符合要求会直接爆 `AssertionError`
-    
+7、使用 assert 检测参数是符合要求，不符合要求会直接爆 `AssertionError`
 
 ```bash
 public int factorial(int n) {
@@ -185,8 +177,7 @@ public int factorial(int n) {
 }
 ```
 
-1. 使用 Optional 替代 null
-    
+8、使用 Optional 替代 null
 
 ```bash
 Optional<String> getName() {
@@ -194,8 +185,7 @@ Optional<String> getName() {
 }
 ```
 
-1. 使用 Try-With-Resources 可以自动关闭流
-    
+9、使用 Try-With-Resources 可以自动关闭流
 
 ```bash
 try (BufferedReader br = new BufferedReader(new FileReader("file.txt"))) {
@@ -219,7 +209,7 @@ cd -
 
 ```bash
 $ history
-$ !666 
+$ !666
 ```
 
 # **Share**
