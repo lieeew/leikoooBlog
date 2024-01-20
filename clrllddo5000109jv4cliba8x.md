@@ -3,6 +3,7 @@ title: "SpringStateMachine 状态机"
 datePublished: Sat Jan 20 2024 04:50:54 GMT+0000 (Coordinated Universal Time)
 cuid: clrllddo5000109jv4cliba8x
 slug: springstatemachine
+cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/xG8IQMqMITM/upload/558cf6e779f0435504930157ac521607.jpeg
 tags: spring-statemachine
 
 ---
